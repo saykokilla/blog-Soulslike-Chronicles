@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceso - Soulslike Chronicles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-bg">
+
+<header>
+    <h1 class="ttl-lgn">🔥 Soulslike Chronicles 🔥</h1>
+    <p style="text-align:center; color:#aaa;">Solo los No Muertos pueden pasar...</p>
+</header>
+
+<main class="login">
+    <form onsubmit="return validarLogin()">
+        <label>Portador de la Llama:</label>
+        <input type="text" id="usuario" placeholder="Guillermo de Jesus Luna Sanchez" required>
+
+        <label>Contraseña Ancestral:</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+
+        <button type="submit">⚔️ Encender la Hoguera</button>
+    </form>
+
+    <p id="mensaje"></p>
+</main>
+
+<script>
+function validarLogin() {
+    var user = document.getElementById("usuario").value;
+    var pass = document.getElementById("password").value;
+
+    if (user === "admin" && pass === "1234") {
+        window.location.href = "index.html";
+        return false;
+    } else {
+        var mensaje = document.getElementById("mensaje");
+        mensaje.innerHTML = "<span style='background-color: #8b0000; color: white; padding: 2px 8px; border-radius: 3px;'>⚠️ Has sido derrotado... Usuario o contraseña incorrectos</span>";
+        mensaje.style.textAlign = "center";
+        return false;
+    }
+}
+</script>
+
+</body>
+</html>
